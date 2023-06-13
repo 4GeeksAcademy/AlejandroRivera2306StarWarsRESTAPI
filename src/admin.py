@@ -1,6 +1,6 @@
 import os
 from flask_admin import Admin
-from models import db, User, Personaje, Planeta
+from models import db, User, Personaje, Planeta, Favorito
 from flask_admin.contrib.sqla import ModelView
 
 
@@ -13,6 +13,7 @@ def setup_admin(app):
     admin.add_view(ModelView(User, db.session))
     admin.add_view(ModelView(Personaje, db.session))
     admin.add_view(ModelView(Planeta, db.session))
+    admin.add_view(ModelView(Favorito, db.session))
 
     # You can duplicate that line to add mew models
     # admin.add_view(ModelView(YourModelName, db.session))
